@@ -34,8 +34,8 @@ def peak_position(x, y):
     '''
     # homework
     # TODO: raise IndexError exception if x & y arrays (lists) do not have same length
-    if len(y) > len(x): x[len(y)]
-    if len(x) > len(y): y[len(x)]
+    if len(y) > len(x): x[len(y)-1]
+    if len(x) > len(y): y[len(x)-1]
 
     # TODO: raise IndexError exception if x or y array (list) have zero length
     position = _get_peak_index(y)
