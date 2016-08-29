@@ -19,6 +19,7 @@ def _get_peak_index(y):
     peak = max(y)
     # advanced homework
     # TODO: what if more than one point has the maximum value?
+    # answer: this returns the index of the first occurrence of the value
     return list(y).index(peak)
 
 
@@ -39,6 +40,7 @@ def peak_position(x, y):
 
     # TODO: raise IndexError exception if x or y array (list) have zero length
     # solution to Q1 works for this too
+
     position = _get_peak_index(y)
     return x[position]
 
@@ -83,6 +85,7 @@ def center_of_mass(x, y):
     
     # homework
     # - Describe what happens when area_y_dy is zero
+    # Answer: ZeroDivisionError:
     return area_x_y_dy / area_y_dy
 
 
@@ -113,6 +116,9 @@ def fwhm(x, y):
     left = position
     while y[left] > half_max:
         left -= 1
+        # HW problem3 solution
+        if left < 0:
+            return "FWHM out of data range"
     # homework
     # TODO: make sure that "left" will not advance too far, out of range of the indexes
     # otherwise, y[-1] will generate an exception
